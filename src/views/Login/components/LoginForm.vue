@@ -2,7 +2,7 @@
 import { reactive, ref, unref, watch } from 'vue'
 import { Form } from '@/components/Form'
 import { useI18n } from '@/hooks/web/useI18n'
-import { ElButton, ElCheckbox, ElLink } from 'element-plus'
+import { ElButton } from 'element-plus'
 import { required } from '@/utils/formRules'
 import { useForm } from '@/hooks/web/useForm'
 import { loginApi, getTestRoleApi, getAdminRoleApi } from '@/api/login'
@@ -73,14 +73,6 @@ const schema = reactive<FormSchema[]>([
     }
   },
   {
-    field: 'other',
-    component: 'Divider',
-    label: t('login.otherLogin'),
-    componentProps: {
-      contentPosition: 'center'
-    }
-  },
-  {
     field: 'otherIcon',
     colProps: {
       span: 24
@@ -88,15 +80,9 @@ const schema = reactive<FormSchema[]>([
   }
 ])
 
-const iconSize = 30
-
-const remember = ref(false)
-
 const { register, elFormRef, methods } = useForm()
 
 const loading = ref(false)
-
-const iconColor = '#999'
 
 const redirect = ref<string>('')
 
@@ -177,46 +163,10 @@ const getRole = async () => {
       <h2 class="text-2xl font-bold text-center w-[100%]">{{ t('login.login') }}</h2>
     </template>
 
-    <template #tool>
-      <div class="flex justify-between items-center w-[100%]">
-        <ElCheckbox v-model="remember" :label="t('login.remember')" size="small" />
-        <ElLink type="primary" :underline="false">{{ t('login.forgetPassword') }}</ElLink>
-      </div>
-    </template>
-
     <template #login>
-      <ElButton :loading="loading" type="primary" class="w-[100%]" @click="signIn">
+      <ElButton :loading="loading" type="primary" class="w-[100%] red-button" @click="signIn">
         {{ t('login.login') }}
       </ElButton>
-    </template>
-
-    <template #otherIcon>
-      <div class="flex justify-between w-[100%]">
-        <Icon
-          icon="ant-design:github-filled"
-          :size="iconSize"
-          class="cursor-pointer anticon"
-          :color="iconColor"
-        />
-        <Icon
-          icon="ant-design:wechat-filled"
-          :size="iconSize"
-          class="cursor-pointer anticon"
-          :color="iconColor"
-        />
-        <Icon
-          icon="ant-design:alipay-circle-filled"
-          :size="iconSize"
-          :color="iconColor"
-          class="cursor-pointer anticon"
-        />
-        <Icon
-          icon="ant-design:weibo-circle-filled"
-          :size="iconSize"
-          :color="iconColor"
-          class="cursor-pointer anticon"
-        />
-      </div>
     </template>
   </Form>
 </template>
@@ -226,5 +176,8 @@ const getRole = async () => {
   &:hover {
     color: var(--el-color-primary) !important;
   }
+}
+.red-button {
+  background-color: rgb(255, 13, 0);
 }
 </style>

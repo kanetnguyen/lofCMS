@@ -80,9 +80,9 @@ export default {
   login: {
     welcome: 'Welcome to the system',
     message: 'Backstage management system',
-    username: 'Username',
-    password: 'Password',
-    login: 'Sign in',
+    username: 'Tài khoản',
+    password: 'Mật khẩu',
+    login: 'Đăng nhập',
     otherLogin: 'Sign in with',
     remember: 'Remember me',
     forgetPassword: 'Forget password',
