@@ -64,7 +64,7 @@ const appStore = useAppStore()
       z-index: -1;
       width: 100%;
       height: 100%;
-      background-image: url('@/assets/imgs/lof.jpg');
+      background-image: url('@/assets/imgs/lofmalto.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       content: '';

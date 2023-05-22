@@ -164,7 +164,7 @@ const getRole = async () => {
     </template>
 
     <template #login>
-      <ElButton :loading="loading" type="primary" class="w-[100%] red-button" @click="signIn">
+      <ElButton :loading="loading" type="primary" class="w-[100%] orange-button" @click="signIn">
         {{ t('login.login') }}
       </ElButton>
     </template>
@@ -177,7 +177,7 @@ const getRole = async () => {
     color: var(--el-color-primary) !important;
   }
 }
-.red-button {
-  background-color: rgb(255, 13, 0);
+.orange-button {
+  background-color: rgb(255, 183, 0);
 }
 </style>
