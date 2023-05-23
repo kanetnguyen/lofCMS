@@ -185,7 +185,7 @@ const getRole = async () => {
     </template> -->
 
     <template #login>
-      <ElButton :loading="loading" type="primary" class="w-[100%]" @click="signIn">
+      <ElButton :loading="loading" type="warning" class="w-[100%]" @click="signIn">
         {{ t('login.login') }}
       </ElButton>
     </template>

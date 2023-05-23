@@ -79,7 +79,7 @@ const { t } = useI18n()
       z-index: -1;
       width: 100%;
       height: 100%;
-      background-image: url('@/assets/svgs/login-bg.svg');
+      background-color: var(--background-login);
       background-position: center;
       background-repeat: no-repeat;
       content: '';
