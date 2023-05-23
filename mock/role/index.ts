@@ -7,60 +7,66 @@ const timeout = 1000
 
 const adminList = [
   {
-    path: '/level',
+    path: '/home',
+    name: 'Home',
     component: '#',
-    redirect: '/level/menu1/menu1-1/menu1-1-1',
-    name: 'Level',
     meta: {
-      title: 'router.level',
+      title: 'router.home',
+      icon: 'carbon:linux'
+    }
+  },
+  {
+    path: '/content',
+    component: '#',
+    redirect: '/content/index',
+    name: 'Content',
+    meta: {
+      title: 'router.content',
+      icon: 'carbon:media-library-filled'
+    },
+    children: [
+      {
+        path: 'list',
+        name: 'ListContent',
+        component: 'views/Content/Index',
+        meta: {
+          title: 'router.listContent'
+        }
+      },
+      {
+        path: 'insert',
+        name: 'AddContent',
+        component: 'views/Content/Add',
+        meta: {
+          title: 'router.addContent'
+        }
+      }
+    ]
+  },
+  {
+    path: '/menu',
+    component: '#',
+    redirect: '/menu/index',
+    name: 'Menu',
+    meta: {
+      title: 'router.menu',
       icon: 'carbon:skill-level-advanced'
     },
     children: [
       {
-        path: 'menu1',
-        name: 'Menu1',
-        component: '##',
-        redirect: '/level/menu1/menu1-1/menu1-1-1',
+        path: 'index',
+        name: 'ListMenu',
+        component: 'views/Menu/Index',
         meta: {
-          title: 'router.menu1'
-        },
-        children: [
-          {
-            path: 'menu1-1',
-            name: 'Menu11',
-            component: '##',
-            redirect: '/level/menu1/menu1-1/menu1-1-1',
-            meta: {
-              title: 'router.menu11',
-              alwaysShow: true
-            },
-            children: [
-              {
-                path: 'menu1-1-1',
-                name: 'Menu111',
-                component: 'views/Level/Menu111',
-                meta: {
-                  title: 'router.menu111'
-                }
-              }
-            ]
-          },
-          {
-            path: 'menu1-2',
-            name: 'Menu12',
-            component: 'views/Level/Menu12',
-            meta: {
-              title: 'router.menu12'
-            }
-          }
-        ]
+          title: 'router.listMenu'
+        }
       },
       {
-        path: 'menu2',
-        name: 'Menu2Demo',
-        component: 'views/Level/Menu2',
+        path: 'add',
+        name: 'AddMenu',
+        component: 'views/Menu/Add',
         meta: {
-          title: 'router.menu2'
+          title: 'router.addMenu'
         }
       }
     ]
@@ -68,16 +74,15 @@ const adminList = [
 ]
 
 const testList: string[] = [
-  '/level',
-  '/level/menu1',
-  '/level/menu1/menu1-1',
-  '/level/menu1/menu1-1/menu1-1-1',
-  '/level/menu1/menu1-2',
-  '/level/menu2'
+  // '/level',
+  // '/level/menu1',
+  // '/level/menu1/menu1-1',
+  // '/level/menu1/menu1-1/menu1-1-1',
+  // '/level/menu1/menu1-2',
+  // '/level/menu2'
 ]
 
 export default [
-  // 列表接口
   {
     url: '/role/list',
     method: 'get',
