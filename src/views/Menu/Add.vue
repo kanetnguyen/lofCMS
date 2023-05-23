@@ -5,7 +5,7 @@ import { useI18n } from '@/hooks/web/useI18n'
 import { ref } from 'vue'
 
 defineOptions({
-  name: 'Menu2'
+  name: 'AddMenu'
 })
 
 const { t } = useI18n()
@@ -14,7 +14,7 @@ const text = ref('')
 </script>
 
 <template>
-  <ContentWrap :title="t('levelDemo.menu')">
-    <div class="flex items-center"> Menu2: <ElInput v-model="text" class="pl-20px" /> </div>
+  <ContentWrap :title="t('menuFeature.addMenu')">
+    <div class="flex items-center"> AddMenu: <ElInput v-model="text" class="pl-20px" /> </div>
   </ContentWrap>
 </template>

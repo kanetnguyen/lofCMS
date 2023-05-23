@@ -70,7 +70,7 @@ export default [
       if (!hasUser) {
         return {
           code: '500',
-          message: '账号或密码错误'
+          message: 'Incorrect username or password'
         }
       }
     }

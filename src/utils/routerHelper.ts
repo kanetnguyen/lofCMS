@@ -96,7 +96,11 @@ export const generateRoutesFn2 = (routes: AppCustomRouteRecordRaw[]): AppRouteRe
       const comModule = modules[`../${route.component}.vue`] || modules[`../${route.component}.tsx`]
       const component = route.component as string
       if (!comModule && !component.includes('#')) {
-        console.error(`未找到${route.component}.vue文件或${route.component}.tsx文件，请创建`)
+        console.log(comModule)
+        console.log(route.component)
+        console.error(
+          `not found${route.component}.vue file or${route.component}.tsx file, please create`
+        )
       } else {
         // Dynamically load routing files, which can be customized according to the actual situation
         data.component =

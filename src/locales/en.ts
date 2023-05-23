@@ -92,12 +92,14 @@ export default {
   router: {
     login: 'Login',
     level: 'Multi level menu',
+    home: 'Home',
     menu: 'Menu',
-    menu1: 'Menu1',
-    menu11: 'Menu1-1',
-    menu111: 'Menu1-1-1',
-    menu12: 'Menu1-2',
-    menu2: 'Menu2',
+    listMenu: 'List',
+    addMenu: 'Add Menu',
+    content: 'Content',
+    listContent: 'Content',
+    addContent: 'Add Content',
+    menu2: 'Menu Manager',
     dashboard: 'Dashboard',
     analysis: 'Analysis',
     workplace: 'Workplace',
@@ -131,6 +133,14 @@ export default {
     user: 'User management',
     role: 'Role management',
     document: 'Document'
+  },
+  menuFeature: {
+    menu: 'Danh sách',
+    addMenu: 'Thêm mới'
+  },
+  contentFeature: {
+    content: 'Danh sách',
+    addContent: 'Thêm mới'
   },
   analysis: {
     newUser: 'New user',
@@ -314,7 +324,8 @@ export default {
     title: 'matters needing attention'
   },
   levelDemo: {
-    menu: 'Multi level menu cache'
+    menu: 'List menus',
+    addMenu: 'Add new'
   },
   searchDemo: {
     search: 'Search',
