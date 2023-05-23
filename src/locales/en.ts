@@ -78,7 +78,7 @@ export default {
     small: 'Small'
   },
   login: {
-    welcome: 'Welcome to the system',
+    welcome: 'Welcome to the LOF system',
     message: 'Backstage management system',
     username: 'Username',
     password: 'Password',

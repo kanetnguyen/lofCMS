@@ -78,9 +78,9 @@ export default {
     small: 'Small'
   },
   login: {
-    welcome: 'Welcome to the system',
-    message: 'Backstage management system',
-    username: 'Tài khoản',
+    welcome: 'Chào mừng đến với LOF',
+    message: 'Hệ thống quản lý quy trình',
+    username: 'Tên người dùng',
     password: 'Mật khẩu',
     login: 'Đăng nhập',
     otherLogin: 'Sign in with',
