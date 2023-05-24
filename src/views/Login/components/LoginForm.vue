@@ -2,7 +2,7 @@
 import { reactive, ref, unref, watch } from 'vue'
 import { Form } from '@/components/Form'
 import { useI18n } from '@/hooks/web/useI18n'
-import { ElButton, ElCheckbox, ElLink } from 'element-plus'
+import { ElButton } from 'element-plus'
 import { required } from '@/utils/formRules'
 import { useForm } from '@/hooks/web/useForm'
 import { loginApi, getTestRoleApi, getAdminRoleApi } from '@/api/login'
@@ -72,14 +72,14 @@ const schema = reactive<FormSchema[]>([
       span: 24
     }
   },
-  {
-    field: 'other',
-    component: 'Divider',
-    label: t('login.otherLogin'),
-    componentProps: {
-      contentPosition: 'center'
-    }
-  },
+  // {
+  //   field: 'other',
+  //   component: 'Divider',
+  //   label: t('login.otherLogin'),
+  //   componentProps: {
+  //     contentPosition: 'center'
+  //   }
+  // },
   {
     field: 'otherIcon',
     colProps: {
@@ -88,15 +88,15 @@ const schema = reactive<FormSchema[]>([
   }
 ])
 
-const iconSize = 30
+// const iconSize = 30
 
-const remember = ref(false)
+// const remember = ref(false)
 
 const { register, elFormRef, methods } = useForm()
 
 const loading = ref(false)
 
-const iconColor = '#999'
+// const iconColor = '#999'
 
 const redirect = ref<string>('')
 
@@ -177,20 +177,20 @@ const getRole = async () => {
       <h2 class="text-2xl font-bold text-center w-[100%]">{{ t('login.login') }}</h2>
     </template>
 
-    <template #tool>
+    <!-- <template #tool>
       <div class="flex justify-between items-center w-[100%]">
         <ElCheckbox v-model="remember" :label="t('login.remember')" size="small" />
         <ElLink type="primary" :underline="false">{{ t('login.forgetPassword') }}</ElLink>
       </div>
-    </template>
+    </template> -->
 
     <template #login>
-      <ElButton :loading="loading" type="primary" class="w-[100%]" @click="signIn">
+      <ElButton :loading="loading" type="warning" class="w-[100%]" @click="signIn">
         {{ t('login.login') }}
       </ElButton>
     </template>
 
-    <template #otherIcon>
+    <!-- <template #otherIcon>
       <div class="flex justify-between w-[100%]">
         <Icon
           icon="ant-design:github-filled"
@@ -217,7 +217,7 @@ const getRole = async () => {
           class="cursor-pointer anticon"
         />
       </div>
-    </template>
+    </template> -->
   </Form>
 </template>
 

@@ -35,7 +35,7 @@ const { t } = useI18n()
             tag="div"
             enter-active-class="animate__animated animate__bounceInLeft"
           >
-            <img src="@/assets/svgs/login-box-bg.svg" key="1" alt="" class="w-350px" />
+            <img src="@/assets/imgs/lofmalto.jpg" key="1" alt="" class="w-350px" />
             <div class="text-3xl text-white" key="2">{{ t('login.welcome') }}</div>
             <div class="mt-5 font-normal text-white text-14px" key="3">
               {{ t('login.message') }}
@@ -79,7 +79,7 @@ const { t } = useI18n()
       z-index: -1;
       width: 100%;
       height: 100%;
-      background-image: url('@/assets/svgs/login-bg.svg');
+      background-color: var(--background-login);
       background-position: center;
       background-repeat: no-repeat;
       content: '';
