@@ -72,7 +72,7 @@ export const appModules: AppState = {
   currentSize: wsCache.get('default') || 'default', // component size
   theme: wsCache.get('theme') || {
     // theme color
-    elColorPrimary: '#409eff',
+    elColorPrimary: '#ff9800',
     // Left menu border color
     leftMenuBorderColor: 'inherit',
     // Left menu background color

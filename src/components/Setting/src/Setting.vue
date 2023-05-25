@@ -29,7 +29,7 @@ const drawer = ref(false)
 const systemTheme = ref(appStore.getTheme.elColorPrimary)
 
 const setSystemTheme = (color: string) => {
-  setCssVar('--el-color-primary', color)
+  setCssVar('--el-color-warning', color)
   appStore.setTheme({ elColorPrimary: color })
   const leftMenuBgColor = useCssVar('--left-menu-bg-color', document.documentElement)
   setMenuTheme(trim(unref(leftMenuBgColor)))
@@ -60,7 +60,7 @@ const setHeaderTheme = (color: string) => {
 const menuTheme = ref(appStore.getTheme.leftMenuBgColor || '')
 
 const setMenuTheme = (color: string) => {
-  const primaryColor = useCssVar('--el-color-primary', document.documentElement)
+  const primaryColor = useCssVar('--el-color-warning', document.documentElement)
   const isDarkColor = colorIsDark(color)
   const theme: Recordable = {
     leftMenuBorderColor: isDarkColor ? 'inherit' : '#eee',
@@ -197,14 +197,14 @@ const clear = () => {
       <ColorRadioPicker
         v-model="systemTheme"
         :schema="[
+          '#ff9800',
           '#409eff',
           '#009688',
           '#536dfe',
           '#ff5c93',
           '#ee4f12',
           '#0096c7',
-          '#9c27b0',
-          '#ff9800'
+          '#9c27b0'
         ]"
         @change="setSystemTheme"
       />

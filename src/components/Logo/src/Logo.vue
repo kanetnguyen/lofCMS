@@ -11,7 +11,7 @@ const appStore = useAppStore()
 
 const show = ref(true)
 
-const title = computed(() => appStore.getTitle)
+// const title = computed(() => appStore.getTitle)
 
 const layout = computed(() => appStore.getLayout)
 
@@ -67,18 +67,9 @@ watch(
       src="@/assets/imgs/logo.png"
       class="w-[calc(var(--logo-height))] h-[calc(var(--logo-height)-10px)]"
     />
-    <div
-      v-if="show"
-      :class="[
-        'ml-10px text-16px font-700',
-        {
-          'text-[var(--logo-title-text-color)]': layout === 'classic',
-          'text-[var(--top-header-text-color)]':
-            layout === 'topLeft' || layout === 'top' || layout === 'cutMenu'
-        }
-      ]"
-    >
-      {{ title }}
-    </div>
+    <img
+      src="@/assets/imgs/loflogo.png"
+      class="w-[calc(var(--logo-height))] h-[calc(var(--logo-height)-10px)]"
+    />
   </router-link>
 </template>
