@@ -112,7 +112,7 @@ export default defineComponent({
   right: 0;
   width: 4px;
   height: 100%;
-  background-color: var(--el-color-primary);
+  background-color: var(--el-color-warning);
   content: '';
 }
 .@{prefix-cls} {
@@ -194,7 +194,7 @@ export default defineComponent({
       // Reset bottom highlight color
       & > .@{elNamespace}-sub-menu.is-active {
         .@{elNamespace}-sub-menu__title {
-          border-bottom-color: var(--el-color-primary) !important;
+          border-bottom-color: var(--el-color-warning) !important;
         }
       }
       .@{elNamespace}-menu-item.is-active {
@@ -221,7 +221,7 @@ export default defineComponent({
   right: 0;
   width: 4px;
   height: 100%;
-  background-color: var(--el-color-primary);
+  background-color: var(--el-color-warning);
   content: '';
 }
 .el-menu {

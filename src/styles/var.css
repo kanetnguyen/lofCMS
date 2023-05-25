@@ -8,25 +8,25 @@
 
   --left-menu-min-width: 64px;
 
-  --left-menu-bg-color: #001529;
+  --left-menu-bg-color: #ffd700;
 
-  --left-menu-bg-light-color: #0f2438;
+  --left-menu-bg-light-color: #ffd700;
 
-  --left-menu-bg-active-color: var(--el-color-primary);
+  --left-menu-bg-active-color: RGBA(230,162,60,0.1);
 
-  --left-menu-text-color: #bfcbd9;
+  --left-menu-text-color: #333;
 
-  --left-menu-text-active-color: #fff;
+  --left-menu-text-active-color: var(--el-color-warning);
 
-  --left-menu-collapse-bg-active-color: var(--el-color-primary);
+  --left-menu-collapse-bg-active-color: RGBA(230,162,60,0.1);
   /* left menu end */
 
   /* logo start */
   --logo-height: 50px;
 
-  --logo-title-text-color: #fff;
+  --logo-title-text-color: inherit;
 
-  --logo-border-color: 'inherit';
+  --logo-border-color: '#eee';
   /* logo end */
 
   /* header start */

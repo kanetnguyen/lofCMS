@@ -99,7 +99,7 @@ export default defineComponent({
       color: var(--top-header-text-color);
 
       &:hover {
-        color: var(--el-color-primary);
+        color: var(--el-color-warning);
       }
     }
   }
@@ -109,7 +109,7 @@ export default defineComponent({
       color: var(--top-header-text-color);
 
       &:hover {
-        color: var(--el-color-primary);
+        color: var(--el-color-warning);
       }
     }
   }

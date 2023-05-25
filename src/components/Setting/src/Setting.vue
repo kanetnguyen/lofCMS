@@ -67,13 +67,13 @@ const setMenuTheme = (color: string) => {
     leftMenuBgColor: color,
     leftMenuBgLightColor: isDarkColor ? lighten(color!, 6) : color,
     leftMenuBgActiveColor: isDarkColor
-      ? 'var(--el-color-primary)'
+      ? 'var(--el-color-warning)'
       : hexToRGB(unref(primaryColor), 0.1),
     leftMenuCollapseBgActiveColor: isDarkColor
-      ? 'var(--el-color-primary)'
+      ? 'var(--el-color-warning)'
       : hexToRGB(unref(primaryColor), 0.1),
     leftMenuTextColor: isDarkColor ? '#bfcbd9' : '#333',
-    leftMenuTextActiveColor: isDarkColor ? '#fff' : 'var(--el-color-primary)',
+    leftMenuTextActiveColor: isDarkColor ? '#fff' : 'var(--el-color-warning)',
     logoTitleTextColor: isDarkColor ? '#fff' : 'inherit',
     logoBorderColor: isDarkColor ? color : '#eee'
   }
@@ -175,7 +175,7 @@ const clear = () => {
 <template>
   <div
     :class="prefixCls"
-    class="fixed top-[45%] right-0 w-40px h-40px text-center leading-40px bg-[var(--el-color-primary)] cursor-pointer"
+    class="fixed top-[45%] right-0 w-40px h-40px text-center leading-40px bg-[var(--el-color-warning)] cursor-pointer"
     @click="drawer = true"
   >
     <Icon icon="ant-design:setting-outlined" color="#fff" />
@@ -230,13 +230,13 @@ const clear = () => {
         <ColorRadioPicker
           v-model="menuTheme"
           :schema="[
-            '#5872f4',
+            '#ffd700',
             '#001529',
             '#212121',
-            '#273352',
-            '#191b24',
-            '#383f45',
-            '#001628',
+            '#4caf50',
+            '#007bff',
+            '#808080',
+            '#ffffff',
             '#344058'
           ]"
           @change="setMenuTheme"

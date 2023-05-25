@@ -224,7 +224,7 @@ const getRole = async () => {
 <style lang="less" scoped>
 :deep(.anticon) {
   &:hover {
-    color: var(--el-color-primary) !important;
+    color: var(--el-color-warning) !important;
   }
 }
 </style>
