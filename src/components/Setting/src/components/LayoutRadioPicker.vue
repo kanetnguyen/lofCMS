@@ -165,7 +165,7 @@ const layout = computed(() => appStore.getLayout)
   }
 
   .is-acitve {
-    border-color: var(--el-color-primary);
+    border-color: var(--el-color-warning);
   }
 }
 </style>

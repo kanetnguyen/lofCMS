@@ -472,13 +472,13 @@ watch(
 
   &__item:not(.is-active) {
     &:hover {
-      color: var(--el-color-primary);
+      color: var(--el-color-warning);
     }
   }
 
   &__item.is-active {
     color: var(--el-color-white);
-    background-color: var(--el-color-primary);
+    background-color: var(--el-color-warning);
     .@{prefix-cls}__item--close {
       :deep(span) {
         color: var(--el-color-white) !important;
@@ -514,13 +514,13 @@ watch(
 
     &__item:not(.is-active) {
       &:hover {
-        color: var(--el-color-primary);
+        color: var(--el-color-warning);
       }
     }
 
     &__item.is-active {
       color: var(--el-color-white);
-      background-color: var(--el-color-primary);
+      background-color: var(--el-color-warning);
       .@{prefix-cls}__item--close {
         :deep(span) {
           color: var(--el-color-white) !important;

@@ -197,7 +197,7 @@ export default defineComponent({
                     <Icon
                       icon="ep:warning"
                       size={16}
-                      color="var(--el-color-primary)"
+                      color="var(--el-color-warning)"
                       class="ml-2px relative top-1px"
                     ></Icon>
                   )

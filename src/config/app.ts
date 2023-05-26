@@ -72,25 +72,25 @@ export const appModules: AppState = {
   currentSize: wsCache.get('default') || 'default', // component size
   theme: wsCache.get('theme') || {
     // theme color
-    elColorPrimary: '#409eff',
+    elColorPrimary: '#ff9800',
     // Left menu border color
-    leftMenuBorderColor: 'inherit',
+    leftMenuBorderColor: '#eee',
     // Left menu background color
-    leftMenuBgColor: '#001529',
+    leftMenuBgColor: '#ffd700',
     // Left menu light background color
-    leftMenuBgLightColor: '#0f2438',
+    leftMenuBgLightColor: '#ffd700',
     // Left menu selection background color
-    leftMenuBgActiveColor: 'var(--el-color-primary)',
+    leftMenuBgActiveColor: 'RGBA(230,162,60,0.1)',
     // The left menu collapses and selects the background color
-    leftMenuCollapseBgActiveColor: 'var(--el-color-primary)',
+    leftMenuCollapseBgActiveColor: 'RGBA(230,162,60,0.1)',
     // Left menu font color
-    leftMenuTextColor: '#bfcbd9',
+    leftMenuTextColor: '#333',
     // Left menu selection font color
-    leftMenuTextActiveColor: '#fff',
+    leftMenuTextActiveColor: 'var(--el-color-warning)',
     // logo font color
-    logoTitleTextColor: '#fff',
+    logoTitleTextColor: 'inherit',
     // logo border color
-    logoBorderColor: 'inherit',
+    logoBorderColor: '#eee',
     // header background color
     topHeaderBgColor: '#fff',
     // header font color

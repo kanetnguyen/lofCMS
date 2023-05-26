@@ -29,7 +29,7 @@ const drawer = ref(false)
 const systemTheme = ref(appStore.getTheme.elColorPrimary)
 
 const setSystemTheme = (color: string) => {
-  setCssVar('--el-color-primary', color)
+  setCssVar('--el-color-warning', color)
   appStore.setTheme({ elColorPrimary: color })
   const leftMenuBgColor = useCssVar('--left-menu-bg-color', document.documentElement)
   setMenuTheme(trim(unref(leftMenuBgColor)))
@@ -60,20 +60,20 @@ const setHeaderTheme = (color: string) => {
 const menuTheme = ref(appStore.getTheme.leftMenuBgColor || '')
 
 const setMenuTheme = (color: string) => {
-  const primaryColor = useCssVar('--el-color-primary', document.documentElement)
+  const primaryColor = useCssVar('--el-color-warning', document.documentElement)
   const isDarkColor = colorIsDark(color)
   const theme: Recordable = {
     leftMenuBorderColor: isDarkColor ? 'inherit' : '#eee',
     leftMenuBgColor: color,
     leftMenuBgLightColor: isDarkColor ? lighten(color!, 6) : color,
     leftMenuBgActiveColor: isDarkColor
-      ? 'var(--el-color-primary)'
+      ? 'var(--el-color-warning)'
       : hexToRGB(unref(primaryColor), 0.1),
     leftMenuCollapseBgActiveColor: isDarkColor
-      ? 'var(--el-color-primary)'
+      ? 'var(--el-color-warning)'
       : hexToRGB(unref(primaryColor), 0.1),
     leftMenuTextColor: isDarkColor ? '#bfcbd9' : '#333',
-    leftMenuTextActiveColor: isDarkColor ? '#fff' : 'var(--el-color-primary)',
+    leftMenuTextActiveColor: isDarkColor ? '#fff' : 'var(--el-color-warning)',
     logoTitleTextColor: isDarkColor ? '#fff' : 'inherit',
     logoBorderColor: isDarkColor ? color : '#eee'
   }
@@ -175,7 +175,7 @@ const clear = () => {
 <template>
   <div
     :class="prefixCls"
-    class="fixed top-[45%] right-0 w-40px h-40px text-center leading-40px bg-[var(--el-color-primary)] cursor-pointer"
+    class="fixed top-[45%] right-0 w-40px h-40px text-center leading-40px bg-[var(--el-color-warning)] cursor-pointer"
     @click="drawer = true"
   >
     <Icon icon="ant-design:setting-outlined" color="#fff" />
@@ -197,14 +197,14 @@ const clear = () => {
       <ColorRadioPicker
         v-model="systemTheme"
         :schema="[
+          '#ff9800',
           '#409eff',
           '#009688',
           '#536dfe',
           '#ff5c93',
           '#ee4f12',
           '#0096c7',
-          '#9c27b0',
-          '#ff9800'
+          '#9c27b0'
         ]"
         @change="setSystemTheme"
       />
@@ -230,13 +230,13 @@ const clear = () => {
         <ColorRadioPicker
           v-model="menuTheme"
           :schema="[
-            '#5872f4',
+            '#ffd700',
             '#001529',
             '#212121',
-            '#273352',
-            '#191b24',
-            '#383f45',
-            '#001628',
+            '#4caf50',
+            '#007bff',
+            '#808080',
+            '#ffffff',
             '#344058'
           ]"
           @change="setMenuTheme"
