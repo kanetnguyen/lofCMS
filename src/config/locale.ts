@@ -1,11 +1,11 @@
 import { useCache } from '@/hooks/web/useCache'
-import zhCn from 'element-plus/es/locale/lang/zh-cn'
+import vi from 'element-plus/es/locale/lang/vi'
 import en from 'element-plus/es/locale/lang/en'
 
 const { wsCache } = useCache()
 
 export const elLocaleMap = {
-  'zh-CN': zhCn,
+  vi: vi,
   en: en
 }
 export interface LocaleState {
@@ -15,13 +15,12 @@ export interface LocaleState {
 
 export const localeModules: LocaleState = {
   currentLocale: {
-    lang: wsCache.get('lang') || 'zh-CN',
-    elLocale: elLocaleMap[wsCache.get('lang') || 'zh-CN']
+    lang: wsCache.get('lang') || 'vi',
+    elLocale: elLocaleMap[wsCache.get('lang') || 'vi']
   },
-  // 多语言
   localeMap: [
     {
-      lang: 'zh-CN',
+      lang: 'vi',
       name: 'Tiếng việt'
     },
     {
