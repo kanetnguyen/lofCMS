@@ -368,7 +368,14 @@ export default {
     showExpandedRows: 'Show expanded rows',
     hiddenExpandedRows: 'Hidden expanded rows',
     changeTitle: 'Change title',
-    header: 'Header'
+    header: 'Header',
+    uuid: 'UUId',
+    name: 'Name',
+    iconText: 'Icon Text',
+    level: 'Level',
+    status: 'Status',
+    updatedAt: 'Update date',
+    updatedBy: 'Updater'
   },
   richText: {
     richText: 'Rich text',

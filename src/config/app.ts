@@ -76,9 +76,9 @@ export const appModules: AppState = {
     // Left menu border color
     leftMenuBorderColor: '#eee',
     // Left menu background color
-    leftMenuBgColor: '#ffd700',
+    leftMenuBgColor: '#ffffff',
     // Left menu light background color
-    leftMenuBgLightColor: '#ffd700',
+    leftMenuBgLightColor: '#ffffff',
     // Left menu selection background color
     leftMenuBgActiveColor: 'RGBA(230,162,60,0.1)',
     // The left menu collapses and selects the background color
@@ -86,7 +86,7 @@ export const appModules: AppState = {
     // Left menu font color
     leftMenuTextColor: '#333',
     // Left menu selection font color
-    leftMenuTextActiveColor: 'var(--el-color-warning)',
+    leftMenuTextActiveColor: '#333',
     // logo font color
     logoTitleTextColor: 'inherit',
     // logo border color
