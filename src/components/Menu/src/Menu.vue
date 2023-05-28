@@ -225,7 +225,7 @@ export default defineComponent({
   content: '';
 }
 .el-menu {
-  background-color: green !important;
+  background-color: #ff9800 !important;
   color: red;
 }
 .@{prefix-cls}--vertical,
