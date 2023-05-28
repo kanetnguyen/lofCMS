@@ -47,7 +47,6 @@ const List: {
 ]
 
 export default [
-  // 列表接口
   {
     url: '/menu/list',
     method: 'get',

@@ -17,32 +17,28 @@ export type CrudSchema = Omit<TableColumn, 'children'> & {
 }
 
 type CrudSearchParams = {
-  // 是否显示在查询项
   show?: boolean
-  // 字典名称，会去取全局的字典
+
   dictName?: string
-  // 接口
+
   api?: () => Promise<any>
-  // 搜索字段
+
   field?: string
 } & Omit<FormSchema, 'field'>
 
 type CrudTableParams = {
-  // 是否显示表头
   show?: boolean
 } & Omit<FormSchema, 'field'>
 
 type CrudFormParams = {
-  // 字典名称，会去取全局的字典
   dictName?: string
-  // 接口
+
   api?: () => Promise<any>
-  // 是否显示表单项
+
   show?: boolean
 } & Omit<FormSchema, 'field'>
 
 type CrudDescriptionsParams = {
-  // 是否显示表单项
   show?: boolean
 } & Omit<DescriptionsSchema, 'field'>
 
@@ -57,13 +53,11 @@ interface AllSchemas {
   detailSchema: DescriptionsSchema[]
 }
 
-// 过滤所有结构
 export const useCrudSchemas = (
   crudSchema: CrudSchema[]
 ): {
   allSchemas: AllSchemas
 } => {
-  // 所有结构数据
   const allSchemas = reactive<AllSchemas>({
     searchSchema: [],
     tableColumns: [],
@@ -88,18 +82,14 @@ export const useCrudSchemas = (
   }
 }
 
-// 过滤 Search 结构
 const filterSearchSchema = (crudSchema: CrudSchema[], allSchemas: AllSchemas): FormSchema[] => {
   const searchSchema: FormSchema[] = []
 
-  // 获取字典列表队列
   const searchRequestTask: Array<() => Promise<void>> = []
 
   eachTree(crudSchema, (schemaItem: CrudSchema) => {
-    // 判断是否显示
     if (schemaItem?.search?.show) {
       const searchSchemaItem = {
-        // 默认为 input
         component: schemaItem.search.component || 'Input',
         componentProps: {},
         ...schemaItem.search,
@@ -108,7 +98,6 @@ const filterSearchSchema = (crudSchema: CrudSchema[], allSchemas: AllSchemas): F
       }
 
       if (searchSchemaItem.dictName) {
-        // 如果有 dictName 则证明是从字典中获取数据
         const dictArr = dictStore.getDictObj[searchSchemaItem.dictName]
         searchSchemaItem.componentProps!.options = filterOptions(dictArr)
       } else if (searchSchemaItem.api) {
@@ -128,7 +117,6 @@ const filterSearchSchema = (crudSchema: CrudSchema[], allSchemas: AllSchemas): F
         })
       }
 
-      // 删除不必要的字段
       delete searchSchemaItem.show
       delete searchSchemaItem.dictName
 
@@ -143,7 +131,6 @@ const filterSearchSchema = (crudSchema: CrudSchema[], allSchemas: AllSchemas): F
   return searchSchema
 }
 
-// 过滤 table 结构
 const filterTableSchema = (crudSchema: CrudSchema[]): TableColumn[] => {
   const tableColumns = treeMap<CrudSchema>(crudSchema, {
     conversion: (schema: CrudSchema) => {
@@ -156,7 +143,6 @@ const filterTableSchema = (crudSchema: CrudSchema[]): TableColumn[] => {
     }
   })
 
-  // 第一次过滤会有 undefined 所以需要二次过滤
   return filter<TableColumn>(tableColumns as TableColumn[], (data) => {
     if (data.children === void 0) {
       delete data.children
@@ -165,18 +151,14 @@ const filterTableSchema = (crudSchema: CrudSchema[]): TableColumn[] => {
   })
 }
 
-// 过滤 form 结构
 const filterFormSchema = (crudSchema: CrudSchema[], allSchemas: AllSchemas): FormSchema[] => {
   const formSchema: FormSchema[] = []
 
-  // 获取字典列表队列
   const formRequestTask: Array<() => Promise<void>> = []
 
   eachTree(crudSchema, (schemaItem: CrudSchema) => {
-    // 判断是否显示
     if (schemaItem?.form?.show !== false) {
       const formSchemaItem = {
-        // 默认为 input
         component: schemaItem?.form?.component || 'Input',
         componentProps: {},
         ...schemaItem.form,
@@ -185,7 +167,6 @@ const filterFormSchema = (crudSchema: CrudSchema[], allSchemas: AllSchemas): For
       }
 
       if (formSchemaItem.dictName) {
-        // 如果有 dictName 则证明是从字典中获取数据
         const dictArr = dictStore.getDictObj[formSchemaItem.dictName]
         formSchemaItem.componentProps!.options = filterOptions(dictArr)
       } else if (formSchemaItem.api) {
@@ -205,7 +186,6 @@ const filterFormSchema = (crudSchema: CrudSchema[], allSchemas: AllSchemas): For
         })
       }
 
-      // 删除不必要的字段
       delete formSchemaItem.show
       delete formSchemaItem.dictName
 
