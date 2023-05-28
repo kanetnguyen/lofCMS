@@ -368,7 +368,14 @@ export default {
     showExpandedRows: 'Show expanded rows',
     hiddenExpandedRows: 'Hidden expanded rows',
     changeTitle: 'Change title',
-    header: 'Header'
+    header: 'Header',
+    uuid: 'UUId',
+    name: 'Tên',
+    iconText: 'Icon Text',
+    level: 'Mức độ',
+    status: 'Trạng thái',
+    updatedAt: 'Ngày cập nhật',
+    updatedBy: 'Người cập nhật'
   },
   richText: {
     richText: 'Rich text',

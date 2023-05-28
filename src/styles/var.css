@@ -12,13 +12,13 @@
 
   --left-menu-bg-light-color: #ffd700;
 
-  --left-menu-bg-active-color: RGBA(230,162,60,0.1);
+  --left-menu-bg-active-color: RGBA(230, 162, 60, 0.1);
 
   --left-menu-text-color: #333;
 
   --left-menu-text-active-color: var(--el-color-warning);
 
-  --left-menu-collapse-bg-active-color: RGBA(230,162,60,0.1);
+  --left-menu-collapse-bg-active-color: RGBA(230, 162, 60, 0.1);
   /* left menu end */
 
   /* logo start */

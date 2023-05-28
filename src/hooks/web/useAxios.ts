@@ -20,8 +20,8 @@ const request = <T>(option: AxiosConfig): AxiosPromise<T> => {
   })
 }
 
-function getFn<T = any>(option: AxiosConfig): AxiosPromise<T> {
-  return request<T>({ method: 'get', ...option })
+function getFn<T = any>(option: any) {
+  return request({ method: 'get', ...option }) as unknown as T
 }
 
 function postFn<T = any>(option: AxiosConfig): AxiosPromise<T> {
